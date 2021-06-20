@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/me/progetto_labiagi/devel -DCMAKE_INSTALL_PREFIX=/home/me/progetto_labiagi/install -G Unix Makefiles
