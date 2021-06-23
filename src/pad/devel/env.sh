@@ -1,0 +1,1 @@
+/home/me/progetto_labiagi/src/pad/devel/.private/catkin_tools_prebuild/env.sh

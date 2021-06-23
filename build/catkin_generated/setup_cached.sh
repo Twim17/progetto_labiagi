@@ -8,6 +8,9 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/me/progetto_labiagi/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/me/progetto_labiagi/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/me/progetto_labiagi/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/me/progetto_labiagi/build'
+export PYTHONPATH="/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES='/home/me/progetto_labiagi/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/me/progetto_labiagi/src:$ROS_PACKAGE_PATH"
