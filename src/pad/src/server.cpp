@@ -14,7 +14,8 @@ bool occupato=false; //variabile che mi indica se il robot è occupato
 bool ServerMenu(pad_msgs::ServerMenuRequest &request,
 		 	pad_msgs::ServerMenuResponse &response){
 		 		ROS_INFO("SERVERMENU CALLED");
-				 
+				cout << request.clientReq << endl;
+				response.serverRes = "yo bro";
 				return true;
 }
 

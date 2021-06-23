@@ -24,7 +24,7 @@ int main(int argc, char** argv){
     pad_msgs::ServerMenu srv;
     cin >> srv.request.clientReq;
     if(menuClient.call(srv)){
-        ROS_INFO("%s", (string)srv.response.serverRes);
+        ROS_INFO("%s", srv.response.serverRes.c_str());
     }
     else {
         ROS_ERROR("Failed to call service Menu");
