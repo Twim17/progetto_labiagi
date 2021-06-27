@@ -24,10 +24,12 @@ struct ServerMenuResponse_
   typedef ServerMenuResponse_<ContainerAllocator> Type;
 
   ServerMenuResponse_()
-    : serverRes()  {
+    : serverRes()
+    , warning(0)  {
     }
   ServerMenuResponse_(const ContainerAllocator& _alloc)
-    : serverRes(_alloc)  {
+    : serverRes(_alloc)
+    , warning(0)  {
   (void)_alloc;
     }
 
@@ -35,6 +37,9 @@ struct ServerMenuResponse_
 
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _serverRes_type;
   _serverRes_type serverRes;
+
+   typedef int32_t _warning_type;
+  _warning_type warning;
 
 
 
@@ -65,7 +70,8 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::pad_msgs::ServerMenuResponse_<ContainerAllocator1> & lhs, const ::pad_msgs::ServerMenuResponse_<ContainerAllocator2> & rhs)
 {
-  return lhs.serverRes == rhs.serverRes;
+  return lhs.serverRes == rhs.serverRes &&
+    lhs.warning == rhs.warning;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -122,12 +128,12 @@ struct MD5Sum< ::pad_msgs::ServerMenuResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "15656c4fab87b46fc1b92114ecf33198";
+    return "ff7d364c458f89755b0b214d0566cc8a";
   }
 
   static const char* value(const ::pad_msgs::ServerMenuResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x15656c4fab87b46fULL;
-  static const uint64_t static_value2 = 0xc1b92114ecf33198ULL;
+  static const uint64_t static_value1 = 0xff7d364c458f8975ULL;
+  static const uint64_t static_value2 = 0x5b0b214d0566cc8aULL;
 };
 
 template<class ContainerAllocator>
@@ -146,7 +152,8 @@ struct Definition< ::pad_msgs::ServerMenuResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "string serverRes \n"
+    return "string serverRes\n"
+"int32 warning \n"
 "\n"
 ;
   }
@@ -167,6 +174,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.serverRes);
+      stream.next(m.warning);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -187,6 +195,8 @@ struct Printer< ::pad_msgs::ServerMenuResponse_<ContainerAllocator> >
   {
     s << indent << "serverRes: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.serverRes);
+    s << indent << "warning: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.warning);
   }
 };
 

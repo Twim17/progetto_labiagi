@@ -61,6 +61,7 @@ pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/ros/typ
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/ros/wall_timer.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/ros/wall_timer_options.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
+pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/std_msgs/String.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 

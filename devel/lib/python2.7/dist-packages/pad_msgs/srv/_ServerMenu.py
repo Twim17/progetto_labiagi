@@ -8,13 +8,17 @@ import struct
 
 
 class ServerMenuRequest(genpy.Message):
-  _md5sum = "b8251afa4652503387afda47e4bbcf26"
+  _md5sum = "8ce379ccd6e519c2634707048f9c62d9"
   _type = "pad_msgs/ServerMenuRequest"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """uint8 clientReq
+  _full_text = """int32 clientReq
+string nomeUtente
+string destinatario
+float64 x
+float64 y
 """
-  __slots__ = ['clientReq']
-  _slot_types = ['uint8']
+  __slots__ = ['clientReq','nomeUtente','destinatario','x','y']
+  _slot_types = ['int32','string','string','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -24,7 +28,7 @@ class ServerMenuRequest(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       clientReq
+       clientReq,nomeUtente,destinatario,x,y
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -35,8 +39,20 @@ class ServerMenuRequest(genpy.Message):
       # message fields cannot be None, assign default values for those that are
       if self.clientReq is None:
         self.clientReq = 0
+      if self.nomeUtente is None:
+        self.nomeUtente = ''
+      if self.destinatario is None:
+        self.destinatario = ''
+      if self.x is None:
+        self.x = 0.
+      if self.y is None:
+        self.y = 0.
     else:
       self.clientReq = 0
+      self.nomeUtente = ''
+      self.destinatario = ''
+      self.x = 0.
+      self.y = 0.
 
   def _get_types(self):
     """
@@ -51,7 +67,21 @@ class ServerMenuRequest(genpy.Message):
     """
     try:
       _x = self.clientReq
-      buff.write(_get_struct_B().pack(_x))
+      buff.write(_get_struct_i().pack(_x))
+      _x = self.nomeUtente
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.destinatario
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self
+      buff.write(_get_struct_2d().pack(_x.x, _x.y))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -64,8 +94,30 @@ class ServerMenuRequest(genpy.Message):
     try:
       end = 0
       start = end
-      end += 1
-      (self.clientReq,) = _get_struct_B().unpack(str[start:end])
+      end += 4
+      (self.clientReq,) = _get_struct_i().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.nomeUtente = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.nomeUtente = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.destinatario = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.destinatario = str[start:end]
+      _x = self
+      start = end
+      end += 16
+      (_x.x, _x.y,) = _get_struct_2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -79,7 +131,21 @@ class ServerMenuRequest(genpy.Message):
     """
     try:
       _x = self.clientReq
-      buff.write(_get_struct_B().pack(_x))
+      buff.write(_get_struct_i().pack(_x))
+      _x = self.nomeUtente
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.destinatario
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self
+      buff.write(_get_struct_2d().pack(_x.x, _x.y))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -93,8 +159,30 @@ class ServerMenuRequest(genpy.Message):
     try:
       end = 0
       start = end
-      end += 1
-      (self.clientReq,) = _get_struct_B().unpack(str[start:end])
+      end += 4
+      (self.clientReq,) = _get_struct_i().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.nomeUtente = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.nomeUtente = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.destinatario = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.destinatario = str[start:end]
+      _x = self
+      start = end
+      end += 16
+      (_x.x, _x.y,) = _get_struct_2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -103,12 +191,18 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_B = None
-def _get_struct_B():
-    global _struct_B
-    if _struct_B is None:
-        _struct_B = struct.Struct("<B")
-    return _struct_B
+_struct_2d = None
+def _get_struct_2d():
+    global _struct_2d
+    if _struct_2d is None:
+        _struct_2d = struct.Struct("<2d")
+    return _struct_2d
+_struct_i = None
+def _get_struct_i():
+    global _struct_i
+    if _struct_i is None:
+        _struct_i = struct.Struct("<i")
+    return _struct_i
 # This Python file uses the following encoding: utf-8
 """autogenerated by genpy from pad_msgs/ServerMenuResponse.msg. Do not edit."""
 import codecs
@@ -119,14 +213,15 @@ import struct
 
 
 class ServerMenuResponse(genpy.Message):
-  _md5sum = "15656c4fab87b46fc1b92114ecf33198"
+  _md5sum = "ff7d364c458f89755b0b214d0566cc8a"
   _type = "pad_msgs/ServerMenuResponse"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """string serverRes 
+  _full_text = """string serverRes
+int32 warning 
 
 """
-  __slots__ = ['serverRes']
-  _slot_types = ['string']
+  __slots__ = ['serverRes','warning']
+  _slot_types = ['string','int32']
 
   def __init__(self, *args, **kwds):
     """
@@ -136,7 +231,7 @@ class ServerMenuResponse(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       serverRes
+       serverRes,warning
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -147,8 +242,11 @@ class ServerMenuResponse(genpy.Message):
       # message fields cannot be None, assign default values for those that are
       if self.serverRes is None:
         self.serverRes = ''
+      if self.warning is None:
+        self.warning = 0
     else:
       self.serverRes = ''
+      self.warning = 0
 
   def _get_types(self):
     """
@@ -168,6 +266,8 @@ class ServerMenuResponse(genpy.Message):
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.warning
+      buff.write(_get_struct_i().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -188,6 +288,9 @@ class ServerMenuResponse(genpy.Message):
         self.serverRes = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.serverRes = str[start:end]
+      start = end
+      end += 4
+      (self.warning,) = _get_struct_i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -206,6 +309,8 @@ class ServerMenuResponse(genpy.Message):
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.warning
+      buff.write(_get_struct_i().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -227,6 +332,9 @@ class ServerMenuResponse(genpy.Message):
         self.serverRes = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.serverRes = str[start:end]
+      start = end
+      end += 4
+      (self.warning,) = _get_struct_i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -235,8 +343,14 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_i = None
+def _get_struct_i():
+    global _struct_i
+    if _struct_i is None:
+        _struct_i = struct.Struct("<i")
+    return _struct_i
 class ServerMenu(object):
   _type          = 'pad_msgs/ServerMenu'
-  _md5sum = '32596eb33160ebf8976ecc13590aa29c'
+  _md5sum = 'da9a91b90d13b3c11f89db69f013608a'
   _request_class  = ServerMenuRequest
   _response_class = ServerMenuResponse

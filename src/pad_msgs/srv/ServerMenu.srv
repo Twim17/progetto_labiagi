@@ -1,3 +1,8 @@
-uint8 clientReq
+int32 clientReq
+string nomeUtente
+string destinatario
+float64 x
+float64 y
 ---
-string serverRes 
+string serverRes
+int32 warning 

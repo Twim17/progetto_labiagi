@@ -51,6 +51,8 @@ ros/ros.h
 /home/me/progetto_labiagi/src/pad/src/ros/ros.h
 pad_msgs/ServerMenu.h
 /home/me/progetto_labiagi/src/pad/src/pad_msgs/ServerMenu.h
+std_msgs/String.h
+/home/me/progetto_labiagi/src/pad/src/std_msgs/String.h
 string
 -
 iostream
@@ -705,6 +707,22 @@ ros/forwards.h
 /opt/ros/melodic/include/ros/ros/forwards.h
 
 /opt/ros/melodic/include/rosconsole/macros_generated.h
+
+/opt/ros/melodic/include/std_msgs/String.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
 /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 ros/macros.h
