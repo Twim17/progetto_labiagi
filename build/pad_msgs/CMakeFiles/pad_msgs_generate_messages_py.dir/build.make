@@ -53,22 +53,38 @@ CMAKE_BINARY_DIR = /home/me/progetto_labiagi/build
 # Include the progress variables for this target.
 include pad_msgs/CMakeFiles/pad_msgs_generate_messages_py.dir/progress.make
 
+pad_msgs/CMakeFiles/pad_msgs_generate_messages_py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/_server2client.py
 pad_msgs/CMakeFiles/pad_msgs_generate_messages_py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/_ServerMenu.py
+pad_msgs/CMakeFiles/pad_msgs_generate_messages_py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/__init__.py
 pad_msgs/CMakeFiles/pad_msgs_generate_messages_py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/__init__.py
 
 
+/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/_server2client.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/_server2client.py: /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG pad_msgs/server2client"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg
+
 /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/_ServerMenu.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
 /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/_ServerMenu.py: /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV pad_msgs/ServerMenu"
-	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -p pad_msgs -o /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV pad_msgs/ServerMenu"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv
+
+/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/__init__.py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/_server2client.py
+/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/__init__.py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/_ServerMenu.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for pad_msgs"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg --initpy
 
 /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/__init__.py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/_server2client.py
 /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/__init__.py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/_ServerMenu.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for pad_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for pad_msgs"
 	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv --initpy
 
 pad_msgs_generate_messages_py: pad_msgs/CMakeFiles/pad_msgs_generate_messages_py
+pad_msgs_generate_messages_py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/_server2client.py
 pad_msgs_generate_messages_py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/_ServerMenu.py
+pad_msgs_generate_messages_py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/__init__.py
 pad_msgs_generate_messages_py: /home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/__init__.py
 pad_msgs_generate_messages_py: pad_msgs/CMakeFiles/pad_msgs_generate_messages_py.dir/build.make
 

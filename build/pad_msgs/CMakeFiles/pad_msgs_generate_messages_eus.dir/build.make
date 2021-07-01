@@ -53,20 +53,27 @@ CMAKE_BINARY_DIR = /home/me/progetto_labiagi/build
 # Include the progress variables for this target.
 include pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus.dir/progress.make
 
+pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus: /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/msg/server2client.l
 pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus: /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/srv/ServerMenu.l
 pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus: /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/manifest.l
 
 
+/home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/msg/server2client.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/msg/server2client.l: /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from pad_msgs/server2client.msg"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/msg
+
 /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/srv/ServerMenu.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/srv/ServerMenu.l: /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from pad_msgs/ServerMenu.srv"
-	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -p pad_msgs -o /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from pad_msgs/ServerMenu.srv"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/srv
 
 /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for pad_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for pad_msgs"
 	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs pad_msgs
 
 pad_msgs_generate_messages_eus: pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus
+pad_msgs_generate_messages_eus: /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/msg/server2client.l
 pad_msgs_generate_messages_eus: /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/srv/ServerMenu.l
 pad_msgs_generate_messages_eus: /home/me/progetto_labiagi/devel/share/roseus/ros/pad_msgs/manifest.l
 pad_msgs_generate_messages_eus: pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus.dir/build.make

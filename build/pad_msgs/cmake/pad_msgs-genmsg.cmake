@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "pad_msgs: 0 messages, 1 services")
+message(STATUS "pad_msgs: 1 messages, 1 services")
 
-set(MSG_I_FLAGS "")
+set(MSG_I_FLAGS "-Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,6 +17,11 @@ add_custom_target(pad_msgs_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg" NAME_WE)
+add_custom_target(_pad_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pad_msgs" "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg" ""
+)
+
 get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv" NAME_WE)
 add_custom_target(_pad_msgs_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pad_msgs" "/home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv" ""
@@ -28,6 +33,12 @@ add_custom_target(_pad_msgs_generate_messages_check_deps_${_filename}
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(pad_msgs
+  "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pad_msgs
+)
 
 ### Generating Services
 _generate_srv_cpp(pad_msgs
@@ -49,6 +60,8 @@ add_custom_target(pad_msgs_generate_messages_cpp
 add_dependencies(pad_msgs_generate_messages pad_msgs_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg" NAME_WE)
+add_dependencies(pad_msgs_generate_messages_cpp _pad_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv" NAME_WE)
 add_dependencies(pad_msgs_generate_messages_cpp _pad_msgs_generate_messages_check_deps_${_filename})
 
@@ -61,6 +74,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pad_msgs_generate_messages_cpp)
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(pad_msgs
+  "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pad_msgs
+)
 
 ### Generating Services
 _generate_srv_eus(pad_msgs
@@ -82,6 +101,8 @@ add_custom_target(pad_msgs_generate_messages_eus
 add_dependencies(pad_msgs_generate_messages pad_msgs_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg" NAME_WE)
+add_dependencies(pad_msgs_generate_messages_eus _pad_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv" NAME_WE)
 add_dependencies(pad_msgs_generate_messages_eus _pad_msgs_generate_messages_check_deps_${_filename})
 
@@ -94,6 +115,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pad_msgs_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(pad_msgs
+  "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pad_msgs
+)
 
 ### Generating Services
 _generate_srv_lisp(pad_msgs
@@ -115,6 +142,8 @@ add_custom_target(pad_msgs_generate_messages_lisp
 add_dependencies(pad_msgs_generate_messages pad_msgs_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg" NAME_WE)
+add_dependencies(pad_msgs_generate_messages_lisp _pad_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv" NAME_WE)
 add_dependencies(pad_msgs_generate_messages_lisp _pad_msgs_generate_messages_check_deps_${_filename})
 
@@ -127,6 +156,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pad_msgs_generate_messages_lisp)
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(pad_msgs
+  "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pad_msgs
+)
 
 ### Generating Services
 _generate_srv_nodejs(pad_msgs
@@ -148,6 +183,8 @@ add_custom_target(pad_msgs_generate_messages_nodejs
 add_dependencies(pad_msgs_generate_messages pad_msgs_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg" NAME_WE)
+add_dependencies(pad_msgs_generate_messages_nodejs _pad_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv" NAME_WE)
 add_dependencies(pad_msgs_generate_messages_nodejs _pad_msgs_generate_messages_check_deps_${_filename})
 
@@ -160,6 +197,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pad_msgs_generate_messages_nodejs)
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(pad_msgs
+  "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pad_msgs
+)
 
 ### Generating Services
 _generate_srv_py(pad_msgs
@@ -181,6 +224,8 @@ add_custom_target(pad_msgs_generate_messages_py
 add_dependencies(pad_msgs_generate_messages pad_msgs_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg" NAME_WE)
+add_dependencies(pad_msgs_generate_messages_py _pad_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv" NAME_WE)
 add_dependencies(pad_msgs_generate_messages_py _pad_msgs_generate_messages_check_deps_${_filename})
 

@@ -53,15 +53,22 @@ CMAKE_BINARY_DIR = /home/me/progetto_labiagi/build
 # Include the progress variables for this target.
 include pad_msgs/CMakeFiles/pad_msgs_generate_messages_nodejs.dir/progress.make
 
+pad_msgs/CMakeFiles/pad_msgs_generate_messages_nodejs: /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/msg/server2client.js
 pad_msgs/CMakeFiles/pad_msgs_generate_messages_nodejs: /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/srv/ServerMenu.js
 
 
+/home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/msg/server2client.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/msg/server2client.js: /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from pad_msgs/server2client.msg"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/msg
+
 /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/srv/ServerMenu.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/srv/ServerMenu.js: /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from pad_msgs/ServerMenu.srv"
-	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -p pad_msgs -o /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from pad_msgs/ServerMenu.srv"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/srv
 
 pad_msgs_generate_messages_nodejs: pad_msgs/CMakeFiles/pad_msgs_generate_messages_nodejs
+pad_msgs_generate_messages_nodejs: /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/msg/server2client.js
 pad_msgs_generate_messages_nodejs: /home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/srv/ServerMenu.js
 pad_msgs_generate_messages_nodejs: pad_msgs/CMakeFiles/pad_msgs_generate_messages_nodejs.dir/build.make
 

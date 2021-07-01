@@ -1,24 +1,35 @@
-#include "ros/ros.h"
 #include "pad_msgs/ServerMenu.h"
+#include "pad_msgs/server2client.h"
 #include "std_msgs/String.h"
-#include <string>
-#include <iostream>
-#include <stdio.h>
-#include <sstream> 
-#define red     		"\x1b[38;5;196m"
-#define green   		"\x1b[38;5;46m"
-#define yellow  		"\x1b[38;5;11m"
-#define normale			"\x1b[0m"
-#define purple 			"\x1b[38;5;129m"
+#include "utili.h"
+#include <ncurses.h>
 using namespace std;
 // bool onmenu = true;
 int32_t warn = 0;
 int check = 0;
-void chatterCallBack(const std_msgs::String::ConstPtr& msg){
-    cout << yellow;
-    cout << msg->data.c_str() << endl << flush;
-    cout << normale;
-    check=-1;
+int check1 = 0;
+ros::Publisher clientchatter;
+utente u;
+void chatterCallBack(const pad_msgs::server2client::ConstPtr& msg){
+    check = msg->index;
+    float a = msg->x; float b = msg->y;
+    if(check==-1){
+        cout << yellow;
+        cout << msg->info.c_str() << endl << flush;
+        cout << normale;
+        check1 = -1;
+    }
+    else if(check==1 && u.x==a && u.y == b){
+        cout << yellow;
+        cout << msg->info.c_str() << endl << flush;
+        cout << normale;
+        pad_msgs::server2client res;
+        cin >> res.info;
+        res.index = 0;
+        clientchatter.publish(res);
+        check1 = -1;
+    }
+    // check=-1;
 }
 
 int main(int argc, char** argv){
@@ -28,7 +39,7 @@ int main(int argc, char** argv){
 
     ros::ServiceClient menuClient = n.serviceClient<pad_msgs::ServerMenu>("Menu");
     ros::Subscriber clientlistener = n.subscribe("serverChatter", 1000, chatterCallBack);
-    ros::Publisher clientchatter = n.advertise<std_msgs::String>("clientChatter",1000);
+    clientchatter = n.advertise<pad_msgs::server2client>("clientChatter",1000);
     string nomeUtente = "";
     string destinatario =  "";
     while(ros::ok()){
@@ -58,8 +69,8 @@ int main(int argc, char** argv){
             cout << normale;
             cin >> srv.request.y;
 
-            nomeUtente = srv.request.nomeUtente;
-
+            u = utente(srv.request.nomeUtente,srv.request.x,srv.request.y);
+            nomeUtente = u.nome;
             if(menuClient.call(srv)){
                 warn = srv.response.warning;
                 if(warn==-1){
@@ -105,7 +116,7 @@ int main(int argc, char** argv){
 
         }
         else if(srv.request.clientReq==3){
-            if(nomeUtente==""){ //CASO IN CUI NON SI È LOGGATI
+            if(u.nome=="utente"){ //CASO IN CUI NON SI È LOGGATI
                 cout << yellow;
                 cout << "DEVI PRIMA EFFETTUARE IL LOGIN" << endl << flush;
                 cout << normale;
@@ -116,10 +127,10 @@ int main(int argc, char** argv){
             cout << normale;
             cin >> srv.request.destinatario;
             destinatario = srv.request.destinatario;
-            srv.request.nomeUtente = nomeUtente;
+            srv.request.nomeUtente = u.nome;
             if(menuClient.call(srv)){
                 warn = srv.response.warning;
-                if(warn == -1){//UTENTE NON ONLINE
+                if(warn == -1){//UTENTE NON ONLINE o ROBOT OCCUPATO
                     cout << yellow; 
                     cout << srv.response.serverRes.c_str() << endl << flush;
                     cout << normale;
@@ -134,10 +145,10 @@ int main(int argc, char** argv){
                 cout << "ASPETTANDO CHE IL PICK AND DELIVERY FINISCA" << endl << flush;
                 cout << normale;
                 while (ros::ok()){
-                   ros::spinOnce();
-                   if(check!=0) break;
+                   ros::spinOnce();//CONTROLLA PER GESTIRE LA CALLBACK
+                   if(check1!=0) break;
                 }
-                check=0;
+                check1=0;
                 
             }
             else {
@@ -149,7 +160,7 @@ int main(int argc, char** argv){
             if(nomeUtente==""){
                 return 0;
             }
-            srv.request.nomeUtente = nomeUtente;
+            srv.request.nomeUtente = u.nome;
 
             if(menuClient.call(srv)){
                 cout << yellow;
@@ -171,6 +182,7 @@ int main(int argc, char** argv){
                 ROS_ERROR("Failed to log out");
             }
         }
+
         
         ros::spinOnce();
     }

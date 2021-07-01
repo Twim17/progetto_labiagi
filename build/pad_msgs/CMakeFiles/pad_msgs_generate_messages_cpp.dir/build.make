@@ -53,17 +53,25 @@ CMAKE_BINARY_DIR = /home/me/progetto_labiagi/build
 # Include the progress variables for this target.
 include pad_msgs/CMakeFiles/pad_msgs_generate_messages_cpp.dir/progress.make
 
+pad_msgs/CMakeFiles/pad_msgs_generate_messages_cpp: /home/me/progetto_labiagi/devel/include/pad_msgs/server2client.h
 pad_msgs/CMakeFiles/pad_msgs_generate_messages_cpp: /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h
 
+
+/home/me/progetto_labiagi/devel/include/pad_msgs/server2client.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/me/progetto_labiagi/devel/include/pad_msgs/server2client.h: /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg
+/home/me/progetto_labiagi/devel/include/pad_msgs/server2client.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from pad_msgs/server2client.msg"
+	cd /home/me/progetto_labiagi/src/pad_msgs && /home/me/progetto_labiagi/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/include/pad_msgs -e /opt/ros/melodic/share/gencpp/cmake/..
 
 /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h: /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv
 /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h: /opt/ros/melodic/share/gencpp/msg.h.template
 /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h: /opt/ros/melodic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from pad_msgs/ServerMenu.srv"
-	cd /home/me/progetto_labiagi/src/pad_msgs && /home/me/progetto_labiagi/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -p pad_msgs -o /home/me/progetto_labiagi/devel/include/pad_msgs -e /opt/ros/melodic/share/gencpp/cmake/..
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from pad_msgs/ServerMenu.srv"
+	cd /home/me/progetto_labiagi/src/pad_msgs && /home/me/progetto_labiagi/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/include/pad_msgs -e /opt/ros/melodic/share/gencpp/cmake/..
 
 pad_msgs_generate_messages_cpp: pad_msgs/CMakeFiles/pad_msgs_generate_messages_cpp
+pad_msgs_generate_messages_cpp: /home/me/progetto_labiagi/devel/include/pad_msgs/server2client.h
 pad_msgs_generate_messages_cpp: /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h
 pad_msgs_generate_messages_cpp: pad_msgs/CMakeFiles/pad_msgs_generate_messages_cpp.dir/build.make
 

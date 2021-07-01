@@ -4,7 +4,9 @@
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenuRequest.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenuResponse.h
+pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /home/me/progetto_labiagi/devel/include/pad_msgs/server2client.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /home/me/progetto_labiagi/src/pad/src/client.cpp
+pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /home/me/progetto_labiagi/src/pad/src/utili.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/ros/advertise_options.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/ros/advertise_service_options.h
 pad/CMakeFiles/pad_client.dir/src/client.cpp.o: /opt/ros/melodic/include/ros/assert.h

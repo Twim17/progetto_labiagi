@@ -1,18 +1,11 @@
-#include "ros/ros.h"
 #include "geometry_msgs/PoseStamped.h"
 #include "/home/me/labiagi_2020_21/workspaces/srrg2_labiagi/devel/include/srrg2_core_ros/PlannerStatusMessage.h"
 #include "pad_msgs/ServerMenu.h"
+#include "pad_msgs/server2client.h"
 #include "std_msgs/String.h"
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <stdio.h>
-#include <sstream>
-#define red     		"\x1b[38;5;196m"
-#define green   		"\x1b[38;5;46m"
-#define yellow  		"\x1b[38;5;11m"
-#define normale			"\x1b[0m"
+#include "utili.h"
 using namespace std;
+
 int32_t cReq = -1;
 bool serverWorking=false; //variabile che mi indica se il server è occupato
 bool robotWorking = false;
@@ -21,42 +14,7 @@ bool arrivato = false;
 bool inizia = false;
 bool unreachable = false;
 int warn = -1;
-
-class utente {
-	public:
-		string nome;
-		float x;
-		float y;
-
-		utente(){
-			this->nome = "nico";
-			this->x = 12;
-			this->y = 12;
-		}
-
-		utente(string nm){
-			nome = nm;
-		}
-
-		utente(string nm,float a,float b){
-			nome = nm;
-			x = a;
-			y = b;
-		}
-
-		// void setXY(float a,float b){
-		// 	this->x = a;
-		// 	this->y = b;
-		// }
-
-		bool operator==(const utente& u){
-            if(u.nome==this->nome) return true;
-            return false;
-        }
-        void stampa(){
-            cout << "nome: " << nome << endl << "    x: " << x << endl << "    y: " << y << endl;
-        }
-};
+bool pacco = false;
 
 utente mittente = utente();
 utente destinatario = utente();
@@ -69,6 +27,7 @@ bool ServerMenu(pad_msgs::ServerMenuRequest &request,
 
 				if(robotWorking==true && cReq==3) { //CASO IN CUI ROBOT STA GIÀ LAVORANDO
 					response.serverRes = "IL ROBOT È ATTUALMENTE OCCUPATO, RIPROVA TRA QUALCHE MINUTO";
+					response.warning = -1;
 					return true;
 				}
 
@@ -171,7 +130,9 @@ bool ServerMenu(pad_msgs::ServerMenuRequest &request,
 						cout << yellow;
 						cout << "Non puo sloggarsi" << endl << flush;
 						cout << normale;
-						response.serverRes = "Non puoi effettuare il log out durante il pick and delivery";
+						if(request.nomeUtente.c_str() == destinatario.nome)
+							response.serverRes = "Ti sta arrivando un pacco! \nNon puoi effettuare il log out durante il pick and delivery";
+						else response.serverRes = "Il tuo pacco deve ancora arrivare al destinatario! \nNon puoi effettuare il log out durante il pick and delivery";
 						response.warning = -1;
 					}
 					else {
@@ -230,6 +191,13 @@ void stato_robot(const srrg2_core_ros::PlannerStatusMessage::ConstPtr& status){
 	// else cout << "HELLOOOOOOOOO" << endl << flush;
 
 }
+void serverCB(const pad_msgs::server2client::ConstPtr& m){
+	cout << m->info << endl << flush;
+	pacco = true;
+	robotMoving = false;
+	arrivato = false;
+	return;
+}
 
 int main(int argc, char** argv){
 	//inizializzo il nodo e creo il nodehandle
@@ -240,8 +208,8 @@ int main(int argc, char** argv){
 	ros::Publisher serverchatter;
 	ros::Subscriber serverListener;
 
-	serverchatter = n.advertise<std_msgs::String>("serverChatter",1000);
-	// serverListener = n.subscribe<std_msgs::String>("clientChatter",1000,serverCB);
+	serverchatter = n.advertise<pad_msgs::server2client>("serverChatter",1000);
+	serverListener = n.subscribe<pad_msgs::server2client>("clientChatter",1000,serverCB);
 
 	ros::Publisher goal_pub = n.advertise<geometry_msgs::PoseStamped>("/move_base_simple/goal", 1000); //Goal publisher
 	ros::Subscriber status_sub = n.subscribe("/planner_status", 1000, stato_robot); //Subscribe al topic che indica lo stato del robot
@@ -259,6 +227,7 @@ int main(int argc, char** argv){
 			msg1.pose.position.y = mittente.y;
 			goal_pub.publish(msg1);
 			robotMoving = true;
+			ros::Duration(0.5).sleep();
 			// cout << green;
 			cout << "GOAL MITTENTE PUBBLICATO" << endl << flush;
 			// cout << normale;
@@ -268,14 +237,26 @@ int main(int argc, char** argv){
 					cout << green;
 					cout << "Robot arrivato al mittente" << endl << flush;
 					cout << normale;
-					robotMoving = false;
-					arrivato = false;
+					pad_msgs::server2client m;
+					m.info ="ROBOT E' ARRIVATO DA TE,INSERISCI QUALCOSA PER SPEDIRE IL PACCO: ";
+					m.index = 1;
+					m.x = mittente.x;
+					m.y = mittente.y;
+					serverchatter.publish(m);
+					ros::Duration(0.5).sleep();
+					while(ros::ok()){
+						if(pacco) break;
+						ros::spinOnce();
+					}
+					cout << "uscito dal while 1" << endl << flush;
+					pacco = false;
 					ros::spinOnce();
 					break;
 				}
 				else if(unreachable){
-					std_msgs::String m;
-					m.data = "IL PUNTO DI ARRIVO NON E' RAGGIUNGIBILE, PICK & DELIVERY VERRA' ANNULLATO";
+					pad_msgs::server2client m;
+					m.info = "IL PUNTO DI ARRIVO NON E' RAGGIUNGIBILE, PICK & DELIVERY VERRA' ANNULLATO";
+					m.index = -1;
 					serverchatter.publish(m);
 					robotMoving = false;
 					arrivato = false;
@@ -298,6 +279,7 @@ int main(int argc, char** argv){
 			msg2.pose.position.x = destinatario.x;
 			msg2.pose.position.y = destinatario.y;
 			goal_pub.publish(msg2);
+			ros::Duration(0.5).sleep();
 			// cout << green;
 			cout << "GOAL DESTINATARIO PUBBLICATO" << endl << flush;
 			// cout << normale;
@@ -307,14 +289,25 @@ int main(int argc, char** argv){
 					cout << green;
 					cout << "Robot arrivato al destinatario" << endl << flush;
 					cout << normale;
-					robotMoving = false;
-					arrivato = false;
+					pad_msgs::server2client m;
+					m.info ="INSERISCI QUALCOSA PER RITIRARE IL PACCO: ";
+					m.index = 1;
+					m.x = destinatario.x;
+					m.y = destinatario.y;
+					serverchatter.publish(m);
+					ros::Duration(0.5).sleep();
+					while(ros::ok()){
+						if(pacco) break;
+						ros::spinOnce();
+					}
+					pacco = false;
 					ros::spinOnce();
 					break;
 				}
 				else if(unreachable){
-					std_msgs::String m;
-					m.data = "IL PUNTO DI ARRIVO NON E' RAGGIUNGIBILE, PICK & DELIVERY VERRA' ANNULLATO";
+					pad_msgs::server2client m;
+					m.info = "IL PUNTO DI ARRIVO NON E' RAGGIUNGIBILE, PICK & DELIVERY VERRA' ANNULLATO";
+					m.index = -1;
 					serverchatter.publish(m);
 					robotMoving = false;
 					arrivato = false;
@@ -332,8 +325,9 @@ int main(int argc, char** argv){
 			cout << green;
 			cout << "PICK AND DELIVERY ANDATO A BUON FINE" << endl << flush;
 			cout << normale;
-			std_msgs::String m;
-			m.data = "IL ROBOT E' ORA LIBERO DI PRENDERE UN ALTRO ORDINE";
+			pad_msgs::server2client m;
+			m.info = "IL ROBOT E' ORA LIBERO DI PRENDERE UN ALTRO ORDINE";
+			m.index = 0;
 			serverchatter.publish(m);
 			cReq = -1;
 			robotWorking = false;

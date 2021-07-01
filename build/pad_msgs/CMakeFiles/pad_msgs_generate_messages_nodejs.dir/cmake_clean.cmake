@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pad_msgs_generate_messages_nodejs"
+  "/home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/msg/server2client.js"
   "/home/me/progetto_labiagi/devel/share/gennodejs/ros/pad_msgs/srv/ServerMenu.js"
 )
 

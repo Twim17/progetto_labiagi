@@ -6,7 +6,9 @@ pad/CMakeFiles/pad_server.dir/src/server.cpp.o
  /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h
  /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenuRequest.h
  /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenuResponse.h
+ /home/me/progetto_labiagi/devel/include/pad_msgs/server2client.h
  /home/me/progetto_labiagi/src/pad/src/server.cpp
+ /home/me/progetto_labiagi/src/pad/src/utili.h
  /opt/ros/melodic/include/geometry_msgs/Point.h
  /opt/ros/melodic/include/geometry_msgs/Pose.h
  /opt/ros/melodic/include/geometry_msgs/PoseStamped.h

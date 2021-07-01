@@ -183,51 +183,6 @@ pad_msgs_generate_messages_nodejs/fast:
 .PHONY : pad_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-pad_msgs/CMakeFiles/pad_msgs_genpy.dir/rule:
-	cd /home/me/progetto_labiagi/build && $(MAKE) -f CMakeFiles/Makefile2 pad_msgs/CMakeFiles/pad_msgs_genpy.dir/rule
-.PHONY : pad_msgs/CMakeFiles/pad_msgs_genpy.dir/rule
-
-# Convenience name for target.
-pad_msgs_genpy: pad_msgs/CMakeFiles/pad_msgs_genpy.dir/rule
-
-.PHONY : pad_msgs_genpy
-
-# fast build rule for target.
-pad_msgs_genpy/fast:
-	cd /home/me/progetto_labiagi/build && $(MAKE) -f pad_msgs/CMakeFiles/pad_msgs_genpy.dir/build.make pad_msgs/CMakeFiles/pad_msgs_genpy.dir/build
-.PHONY : pad_msgs_genpy/fast
-
-# Convenience name for target.
-pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/rule:
-	cd /home/me/progetto_labiagi/build && $(MAKE) -f CMakeFiles/Makefile2 pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/rule
-.PHONY : pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-pad_msgs_generate_messages_lisp: pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : pad_msgs_generate_messages_lisp
-
-# fast build rule for target.
-pad_msgs_generate_messages_lisp/fast:
-	cd /home/me/progetto_labiagi/build && $(MAKE) -f pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/build.make pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/build
-.PHONY : pad_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-pad_msgs/CMakeFiles/pad_msgs_geneus.dir/rule:
-	cd /home/me/progetto_labiagi/build && $(MAKE) -f CMakeFiles/Makefile2 pad_msgs/CMakeFiles/pad_msgs_geneus.dir/rule
-.PHONY : pad_msgs/CMakeFiles/pad_msgs_geneus.dir/rule
-
-# Convenience name for target.
-pad_msgs_geneus: pad_msgs/CMakeFiles/pad_msgs_geneus.dir/rule
-
-.PHONY : pad_msgs_geneus
-
-# fast build rule for target.
-pad_msgs_geneus/fast:
-	cd /home/me/progetto_labiagi/build && $(MAKE) -f pad_msgs/CMakeFiles/pad_msgs_geneus.dir/build.make pad_msgs/CMakeFiles/pad_msgs_geneus.dir/build
-.PHONY : pad_msgs_geneus/fast
-
-# Convenience name for target.
 pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus.dir/rule:
 	cd /home/me/progetto_labiagi/build && $(MAKE) -f CMakeFiles/Makefile2 pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus.dir/rule
 .PHONY : pad_msgs/CMakeFiles/pad_msgs_generate_messages_eus.dir/rule
@@ -316,6 +271,66 @@ _pad_msgs_generate_messages_check_deps_ServerMenu: pad_msgs/CMakeFiles/_pad_msgs
 _pad_msgs_generate_messages_check_deps_ServerMenu/fast:
 	cd /home/me/progetto_labiagi/build && $(MAKE) -f pad_msgs/CMakeFiles/_pad_msgs_generate_messages_check_deps_ServerMenu.dir/build.make pad_msgs/CMakeFiles/_pad_msgs_generate_messages_check_deps_ServerMenu.dir/build
 .PHONY : _pad_msgs_generate_messages_check_deps_ServerMenu/fast
+
+# Convenience name for target.
+pad_msgs/CMakeFiles/pad_msgs_genpy.dir/rule:
+	cd /home/me/progetto_labiagi/build && $(MAKE) -f CMakeFiles/Makefile2 pad_msgs/CMakeFiles/pad_msgs_genpy.dir/rule
+.PHONY : pad_msgs/CMakeFiles/pad_msgs_genpy.dir/rule
+
+# Convenience name for target.
+pad_msgs_genpy: pad_msgs/CMakeFiles/pad_msgs_genpy.dir/rule
+
+.PHONY : pad_msgs_genpy
+
+# fast build rule for target.
+pad_msgs_genpy/fast:
+	cd /home/me/progetto_labiagi/build && $(MAKE) -f pad_msgs/CMakeFiles/pad_msgs_genpy.dir/build.make pad_msgs/CMakeFiles/pad_msgs_genpy.dir/build
+.PHONY : pad_msgs_genpy/fast
+
+# Convenience name for target.
+pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/rule:
+	cd /home/me/progetto_labiagi/build && $(MAKE) -f CMakeFiles/Makefile2 pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/rule
+.PHONY : pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+pad_msgs_generate_messages_lisp: pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : pad_msgs_generate_messages_lisp
+
+# fast build rule for target.
+pad_msgs_generate_messages_lisp/fast:
+	cd /home/me/progetto_labiagi/build && $(MAKE) -f pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/build.make pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/build
+.PHONY : pad_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+pad_msgs/CMakeFiles/pad_msgs_geneus.dir/rule:
+	cd /home/me/progetto_labiagi/build && $(MAKE) -f CMakeFiles/Makefile2 pad_msgs/CMakeFiles/pad_msgs_geneus.dir/rule
+.PHONY : pad_msgs/CMakeFiles/pad_msgs_geneus.dir/rule
+
+# Convenience name for target.
+pad_msgs_geneus: pad_msgs/CMakeFiles/pad_msgs_geneus.dir/rule
+
+.PHONY : pad_msgs_geneus
+
+# fast build rule for target.
+pad_msgs_geneus/fast:
+	cd /home/me/progetto_labiagi/build && $(MAKE) -f pad_msgs/CMakeFiles/pad_msgs_geneus.dir/build.make pad_msgs/CMakeFiles/pad_msgs_geneus.dir/build
+.PHONY : pad_msgs_geneus/fast
+
+# Convenience name for target.
+pad_msgs/CMakeFiles/_pad_msgs_generate_messages_check_deps_server2client.dir/rule:
+	cd /home/me/progetto_labiagi/build && $(MAKE) -f CMakeFiles/Makefile2 pad_msgs/CMakeFiles/_pad_msgs_generate_messages_check_deps_server2client.dir/rule
+.PHONY : pad_msgs/CMakeFiles/_pad_msgs_generate_messages_check_deps_server2client.dir/rule
+
+# Convenience name for target.
+_pad_msgs_generate_messages_check_deps_server2client: pad_msgs/CMakeFiles/_pad_msgs_generate_messages_check_deps_server2client.dir/rule
+
+.PHONY : _pad_msgs_generate_messages_check_deps_server2client
+
+# fast build rule for target.
+_pad_msgs_generate_messages_check_deps_server2client/fast:
+	cd /home/me/progetto_labiagi/build && $(MAKE) -f pad_msgs/CMakeFiles/_pad_msgs_generate_messages_check_deps_server2client.dir/build.make pad_msgs/CMakeFiles/_pad_msgs_generate_messages_check_deps_server2client.dir/build
+.PHONY : _pad_msgs_generate_messages_check_deps_server2client/fast
 
 # Convenience name for target.
 pad_msgs/CMakeFiles/pad_msgs_generate_messages.dir/rule:
@@ -596,9 +611,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... pad_msgs_generate_messages_nodejs"
-	@echo "... pad_msgs_genpy"
-	@echo "... pad_msgs_generate_messages_lisp"
-	@echo "... pad_msgs_geneus"
 	@echo "... pad_msgs_generate_messages_eus"
 	@echo "... pad_msgs_gencpp"
 	@echo "... install/strip"
@@ -607,6 +619,10 @@ help:
 	@echo "... install/local"
 	@echo "... pad_msgs_generate_messages_py"
 	@echo "... _pad_msgs_generate_messages_check_deps_ServerMenu"
+	@echo "... pad_msgs_genpy"
+	@echo "... pad_msgs_generate_messages_lisp"
+	@echo "... pad_msgs_geneus"
+	@echo "... _pad_msgs_generate_messages_check_deps_server2client"
 	@echo "... pad_msgs_generate_messages"
 	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_py"

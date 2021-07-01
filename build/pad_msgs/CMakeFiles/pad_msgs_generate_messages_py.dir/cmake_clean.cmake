@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pad_msgs_generate_messages_py"
+  "/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/_server2client.py"
   "/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/_ServerMenu.py"
+  "/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/msg/__init__.py"
   "/home/me/progetto_labiagi/devel/lib/python2.7/dist-packages/pad_msgs/srv/__init__.py"
 )
 

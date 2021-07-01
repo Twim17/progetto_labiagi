@@ -53,15 +53,22 @@ CMAKE_BINARY_DIR = /home/me/progetto_labiagi/build
 # Include the progress variables for this target.
 include pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/progress.make
 
+pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp: /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/msg/server2client.lisp
 pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp: /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/srv/ServerMenu.lisp
 
 
+/home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/msg/server2client.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/msg/server2client.lisp: /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from pad_msgs/server2client.msg"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/me/progetto_labiagi/src/pad_msgs/msg/server2client.msg -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/msg
+
 /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/srv/ServerMenu.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
 /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/srv/ServerMenu.lisp: /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from pad_msgs/ServerMenu.srv"
-	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -p pad_msgs -o /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/me/progetto_labiagi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from pad_msgs/ServerMenu.srv"
+	cd /home/me/progetto_labiagi/build/pad_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/me/progetto_labiagi/src/pad_msgs/srv/ServerMenu.srv -Ipad_msgs:/home/me/progetto_labiagi/src/pad_msgs/msg -p pad_msgs -o /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/srv
 
 pad_msgs_generate_messages_lisp: pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp
+pad_msgs_generate_messages_lisp: /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/msg/server2client.lisp
 pad_msgs_generate_messages_lisp: /home/me/progetto_labiagi/devel/share/common-lisp/ros/pad_msgs/srv/ServerMenu.lisp
 pad_msgs_generate_messages_lisp: pad_msgs/CMakeFiles/pad_msgs_generate_messages_lisp.dir/build.make
 

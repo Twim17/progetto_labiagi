@@ -5,7 +5,9 @@ pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /home/me/labiagi_2020_21/workspa
 pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenu.h
 pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenuRequest.h
 pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /home/me/progetto_labiagi/devel/include/pad_msgs/ServerMenuResponse.h
+pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /home/me/progetto_labiagi/devel/include/pad_msgs/server2client.h
 pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /home/me/progetto_labiagi/src/pad/src/server.cpp
+pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /home/me/progetto_labiagi/src/pad/src/utili.h
 pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /opt/ros/melodic/include/geometry_msgs/Point.h
 pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /opt/ros/melodic/include/geometry_msgs/Pose.h
 pad/CMakeFiles/pad_server.dir/src/server.cpp.o: /opt/ros/melodic/include/geometry_msgs/PoseStamped.h
